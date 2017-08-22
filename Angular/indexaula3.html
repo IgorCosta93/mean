@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <meta charset="utf-8">
+        <title>JS Bin</title>
+    </head>
+    <body>
+        <!-- WORKING WITH FILTERS -->
+        <div ng-init="amount = 1250.50655554">
+            <p>{{amount | currency:"R$"}}</p>
+            <p>{{amount | number : 3}}</p>
+            <p>{{-amount | number : 3}}</p>
+        </div>
+        <br>
+        <div ng-init="string = 'star wars'">
+            <p>{{string | uppercase}}</p>
+        </div>
+        <br>
+        <div ng-init="myDate = 1399648945000">
+            <p>{{myDate | date:'yyyy - MMMM - d H:m:s'}}</p> <!--short, medium, full -->
+        </div>
+        <br>
+        <div ng-init="array = [0,1,2,3,4,5]">
+            <p>{{array | limitTo: 4}}</p>
+        </div>
+
+        <br>
+        <div ng-init="rebels = [
+            {name: 'Luke Skywalker', profession: 'Jedi', weapon: 'lightsaber', age:'19'},
+            {name: 'Ben Kenobi', profession: 'Jedi', weapon: 'lightsaber', age:'56'},
+            {name: 'Han Solo', profession: 'smuggler', weapon: 'lase blaster', age:'32'},
+            {name: 'Chewbacca', profession: 'pilot', weapon: 'bowcaster', age:'200'}
+        ];">
+            <input type="text" ng-model="search"><!-- if i want to search for a specific field search.weapon
+            and search.$ for search for everuthing-->
+            <ul>
+                <!--<li ng-repeat="rebel in rebels | orderBy : ['profession','-age']">-->
+                <li ng-repeat="rebel in rebels | filter: search">
+                    {{rebel.name}} (age: {{rebel.age}}) is a
+                    {{rebel.profession}} fighting with a {{rebel.weapon}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

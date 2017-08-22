@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <meta charset="utf-8">
+        <title>Controller with As</title>
+        <script>
+            angular.module('myApp', [])
+            .controller('MyController', MyController)
+            .controller('MySecondController', MySecondController)
+
+            function MyController(){
+                var vm = this;
+                vm.name = 'Tamas';
+            }
+
+            function MySecondController(){
+                var vm = this;
+                vm.name = 'Simon';
+            }
+        </script>
+    </head>
+    <body>
+        <!-- The difference is this case is that if i had use the method that i have used before i wouldn't
+        be able to access the information of the first controller in the second, what is not a problem
+        anymore using the method AS and don't using the $scope -->
+        <div ng-controller="MyController as MyCtrl">
+            <div ng-controller="MySecondController as MySecondCtrl">
+                {{MyCtrl.name}}
+                <br>
+                {{MySecondCtrl.name}}
+            </div>
+        </div>
+    </body>
+</html>

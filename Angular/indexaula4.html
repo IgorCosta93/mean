@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+            angular.module('myApp', []).controller('MyController', MyController);
+            //$scope works like a glu beteween the view and the controller
+            function MyController($scope){
+                $scope.rebels = [
+                    {name: 'Luke Skywalker', profession: 'Jedi', weapon: 'lightsaber', age:'19'},
+                    {name: 'Ben Kenobi', profession: 'Jedi', weapon: 'lightsaber', age:'56'},
+                    {name: 'Han Solo', profession: 'smuggler', weapon: 'lase blaster', age:'32'},
+                    {name: 'Chewbacca', profession: 'pilot', weapon: 'bowcaster', age:'200'}
+                ];
+                $scope.number = 0;
+                $scope.increment = function(){
+                    $scope.number = $scope.number + 1;
+                }
+
+                $scope.decrement = function(){
+                    $scope.number = $scope.number -1;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div ng-controller="MyController">
+            <ul>
+                <!--<li ng-repeat="rebel in rebels | orderBy : ['profession','-age']">-->
+                <li ng-repeat="rebel in rebels | filter: search">
+                    {{rebel.name}} (age: {{rebel.age}}) is a
+                    {{rebel.profession}} fighting with a {{rebel.weapon}}
+                </li>
+            </ul>
+            {{number}}
+            <p>
+                <button type="button" ng-click="increment()">+1</button>
+                <button type="button" ng-click="decrement()">-1</button>
+            </p>
+
+        </div>
+    </body>
+</html>

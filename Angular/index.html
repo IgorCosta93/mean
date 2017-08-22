@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- np-app defines the scopo of your angularJS app-->
+<html ng-app>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <!-- {{}} alow us to code javascript in the body
+        Thanks to angularjs -->
+        1 + 2 = {{1+2}}
+        <br>
+        {{'Hello' + ' ' + 'World.'}}
+        <br><br>
+        <!-- Working with the data-binding
+        Means that you can update the screen at the same time that you write-->
+        <input type="text" name="" value=""  ng-model="user">
+        <p>Hello, {{user}}</p>
+    </body>
+</html>
