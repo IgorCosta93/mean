@@ -1,0 +1,11 @@
+In a case of you want to add something to the last commit
+	- git commit --amend -m "Version 1.0.1 (edition)"
+
+
+
+withdraw file from stage area
+	- git reset HEAD new.php
+
+
+make a file go back to the last commit made
+	- git checkout -- new.php

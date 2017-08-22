@@ -1,0 +1,24 @@
+Firs is necessary create a repository (make sure you are at the folder you want to control)
+	- git init
+
+Find out the Repository Status
+	- git status
+
+
+Add new files
+	- git add index.html 	//por arquivo
+	- git add *.html	//por extensão
+	- git add .		//todos
+
+
+Now to send this new files to the repository
+	- git commit -m "Versão 1.0"
+
+
+In case we want to let some file out from the git we create a file .gitignore and put the name inside
+	- Ex : teste.txt   or even a folder temp/
+
+Make things fast 
+	- git commit -a -m "Versão 1.0.1"
+
+

@@ -1,0 +1,15 @@
+-----------See changes on files
+	- git diff
+
+See what is in the Stage Fase
+	- git diff --staged 
+
+
+-----SEE ALL COMMIT MADE BY YOU
+	- git log
+	- git log -p 		see more information 
+	- git log -1 		to see information by commit ONE ate time been the number 1 the firts one could be 2 or 3..
+	- git log --pretty=oneline	to see only the code and the message
+	
+To see the logs in a batter way we could use the graphics interface
+	- gitk

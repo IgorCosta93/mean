@@ -1,0 +1,16 @@
+Create enviroment
+	- git branch test
+
+
+Change enviroment
+	- git checkout test
+
+Having done that you can work in this enviroment without changing anything in the original, an when you want to add the new functions and files to the original you can merge the versions
+	- git merge test
+
+
+delete a branch
+	- git branch -d test
+
+Show all branches 
+	- git branch

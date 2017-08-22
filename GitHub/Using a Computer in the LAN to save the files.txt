@@ -1,0 +1,23 @@
+When you want to create a repository that will be open to others computers 
+	- git init --bare
+
+This is the only thing that is neeeded to do on the serverigor
+
+
+------------------NOW ON THE LOCAL MACHINE
+Firts i need to clone the structure
+	- git clone file:////adsorocaps/sis/ 
+	this will create a folder with the same name if I want to change just insert in front 
+	- git clone file:////adsorocaps/sis/ sis1
+
+
+Discover the name of the remote server
+	- git remote 	if you have not change will be origin
+
+
+Sending the files to server
+	- git push origin master
+
+
+Getting new information from server
+	- git pull origin master

@@ -1,0 +1,25 @@
+Search for a tag 
+	- git tag
+
+
+create a tag 
+	- git tag -a v1.0 -m "Versao 1.0"
+
+
+Insert a tag in a older commit
+	- git tag -a v.0.0 fdf8d7fydf8df7dfghdfg65546 -m "Versao 0.0"
+
+
+See more information about a tag 
+	- git show v0.0
+
+
+TAG is used has a pointer so if you want to go back the files to the time you use
+	- git checkout v0.0
+
+
+Return to the original point
+	- git checkout master
+
+Delete a tag 
+	- git tag -d v0.0

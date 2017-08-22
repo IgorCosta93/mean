@@ -1,0 +1,89 @@
+
+Show the Databses
+	- show dbs
+
+Selecte BD
+	- use contactlist
+
+Show all Collections (Tables)
+	- show collections
+
+To create a database you just need to use one time, and put some information on 
+	- use "nameDB"
+
+Creating a colection - tech is the name of the collection
+	- db.createCollection("tech")
+
+Inserting information in a DB 
+	- db.tech.insert({
+		name : "mongoDB",
+		role : "Database"})
+
+Show the information on the collection
+	- db.tech.find().pretty()
+
+If i want to select just one document
+	- db.tech.find({"_id": ObjectId("323dsd3d")})
+
+Bring the result in ascendent order
+	- db.tech.find().sort({"name":1})
+
+Bring the result in descendent order
+	- db.tech.find().sort({"name":-1})
+
+Bringing one item from the document
+	- db.tech.find({},{"name":true})
+the first {} is dor the _id but if we don'twant the _id to appear on the screem just put false
+	- db.tech.find({},{"name":true,"_id":false})
+
+UPDATE a file
+this comand is going to work in just ONE object in case of more results just the first will be update
+	- db.tech.update(
+		{"name" : "Angular"},
+		{$set : {"name" : "AngularJS"}}
+	)
+
+to update more than one file e need to put a new item called multi
+	- db.tech.update(
+		{},
+		{ $set : {"language" : "JavaScript}},
+		{multi : true}
+		)
+
+Deleting documents
+	- db.tech.remove({"name" : "Express"})
+
+Deleting the Collection
+	- db.tech.drop()
+
+
+
+-----------Realizing a Backup 
+
+	-mongodump --db meantest
+
+By default the backup goes to a folder called dump in the actual directory
+
+In the case i want the file zip
+	- mongodump --db meantest --gzip
+
+
+
+----------Restoring the backup
+
+if the database doesn't exist that will not be a problem because mongo will create
+	- mongorestore --db mean2 --gzip dump/meantest
+
+
+
+----------Exporting a Database File JSON
+
+This exports just one collection at time
+	- mongoexport --db meantest --collection tech --out MEAN/api/data/tech.json
+
+The problem with the last comand is that will generate a Json file that is invalid because will not generate a a array and put some commas, so we need to implement a new flag
+	- mongoexport --db meantest --collection tech --out MEAN/api/data/tech.json --jsonArray --pretty
+
+
+Importing a Collection File Json
+	- mongoimport --db mean3 --collection tech --jsonArray MEAN/api/data/tech.json

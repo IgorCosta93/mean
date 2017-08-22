@@ -1,0 +1,15 @@
+[
+    "Post":1,
+    "Tittle":"My first Post",
+    "Content":"Some Content",
+    "Coments":[
+    {
+        "ComentId":1,
+        "Content":"Comenting on your firts post"
+    },
+    ],
+    "Author":{
+        "Id":1,
+        "DisplayName":"Simon Holmes"
+    }
+]

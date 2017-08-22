@@ -1,0 +1,5 @@
+First we need to give to the computer permission to acess github
+	- ssh-keygen
+
+Send 
+	- git push origin master

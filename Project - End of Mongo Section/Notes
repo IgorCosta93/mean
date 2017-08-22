@@ -1,0 +1,47 @@
+In the case we want to set the status with a page response
+we can do like this
+
+app.get('/', function(req,res){
+    console.log("GET the homepage");
+    res
+        .status(404)
+        .send("Express yourself");
+});
+
+---------------------------------------
+
+//when we use this function we eliminate the need of
+//routen pages like we have done before
+app.use(express.static(path.join(__dirname,'public')));
+
+app.get('/', function(req,res){
+    //right know only the req is done no response
+    console.log("GET the homepage");
+    //know i send a response
+    res
+        .status(200)
+        //.send("Express yourself");
+        //here we pass the name folder and file in string
+        //to avoid sintaxe erros in differents kinds of systems
+        .sendFile(path.join(__dirname,'public','index.html'));
+});
+
+----------------------------------------------
+
+//return a json file
+app.get('/json', function(req,res){
+    console.log("Get the json");
+    res
+        .status(200)
+        .json({"jsonData": true});
+});
+
+app.get('/file', function(req, res){
+    console.log("GET the file");
+    res
+        .status(200)
+        //path.join alows to join more than one file
+        //in this case path + file
+        //__dirname get the name of the actual diretory
+        .sendFile(path.join(__dirname,'app.js'));
+});
