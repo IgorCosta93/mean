@@ -15,7 +15,7 @@ var bodyParser = require('body-parser');
 var routes = require('./api/routes');
 
 //app.set allows to set a value to a variable
-app.set('port', 3000);
+app.set('port', 3004);
 //used to listen to a port in the server
 //app.get reciver a value set
 
