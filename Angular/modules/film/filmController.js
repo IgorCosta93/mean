@@ -2,10 +2,20 @@
 angular.module('myApp').controller('FilmController', FilmController);
 
 //routeParams is used to recover information from the route
+/*
 function FilmController($http, $routeParams){
   var vm = this;
   var id = $routeParams.id;
     $http.get('http://swapi-tpiros.rhcloud.com/films/'+id).then(function(res){
       vm.film = res.data;
     });
+}
+*/
+
+function FilmController($routeParams, FilmFactory){
+  var vm = this;
+  var id = $routeParams.id;
+  FilmFactory.getOneFilm(id).then(function(res){
+    vm.film = res;
+  });
 }
