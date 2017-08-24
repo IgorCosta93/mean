@@ -15,7 +15,7 @@ var bodyParser = require('body-parser');
 var routes = require('./api/routes');
 
 //app.set allows to set a value to a variable
-app.set('port', 3004);
+app.set('port', 3000);
 //used to listen to a port in the server
 //app.get reciver a value set
 
@@ -32,6 +32,8 @@ app.use(function(req, res, next){
 //because everytime we solicitate a file he will first
 //look into the public folder to find a match
 app.use(express.static(path.join(__dirname,'public')));
+
+//app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 //Deals with the post methods
 //Extended false say that we are going to use only strings and arrays
